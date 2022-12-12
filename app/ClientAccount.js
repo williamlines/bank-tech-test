@@ -12,6 +12,10 @@ class ClientAccount {
   addToBalance(value) {
     this.balance += value;
   }
+
+  removeFromBalance(value) {
+    this.balance -= value;
+  }
 }
 
 module.exports = ClientAccount;
