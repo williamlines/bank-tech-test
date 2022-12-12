@@ -1,4 +1,4 @@
-const Deposition =  require("./accountActions/Deposition")
+const Deposition = require("./accountActions/Deposition");
 
 class ClientAccount {
   constructor(name) {
@@ -24,7 +24,10 @@ class ClientAccount {
   }
 
   deposit(value, date) {
-    this.addToBalance(value)
+    const deposition = new Deposition(value, this.balance, date);
+    const newItemForStatement = deposition.makeDeposit();
+    this.addToBalance(value);
+    this.addToStatement(newItemForStatement);
   }
 }
 

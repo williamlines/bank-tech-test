@@ -74,5 +74,16 @@ describe("class ClientAccount", () => {
       account.deposit(300, "01/05/2022");
       expect(account.balance).toEqual(300);
     });
+
+    it("pushes desired object to the statement array", () => {
+      account.deposit(300, "01/05/2022");
+      expect(account.statement).toEqual([
+        {
+          date: "01/05/2022",
+          deposited: 300,
+          balance: 300,
+        },
+      ]);
+    });
   });
 });
