@@ -4,6 +4,10 @@ class Withdrawal {
     this.balance = balance;
     this.date = date;
   }
+
+  newBalance() {
+    return this.balance - this.value;
+  }
 }
 
 module.exports = Withdrawal;

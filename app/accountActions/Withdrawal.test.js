@@ -10,4 +10,10 @@ describe("class: Withdrawal", () => {
     expect(withdrawal.balance).toEqual(2000);
     expect(withdrawal.date).toEqual("01/03/2022");
   });
+
+  describe("newBalance function", () => {
+    it("returns the new balance", () => {
+      expect(withdrawal.newBalance()).toEqual(1800);
+    });
+  });
 });
