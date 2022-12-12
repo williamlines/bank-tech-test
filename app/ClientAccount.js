@@ -8,6 +8,10 @@ class ClientAccount {
   getBalance() {
     return this.balance;
   }
+
+  addToBalance(value) {
+    this.balance += value;
+  }
 }
 
 module.exports = ClientAccount;

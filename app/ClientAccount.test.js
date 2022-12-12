@@ -15,5 +15,10 @@ describe("class ClientAccount", () => {
     it("getBalance() can return the initially empty balance", () => {
       expect(account.getBalance()).toEqual(0);
     });
+
+    it("addToBalance() can add to balance", () => {
+      account.addToBalance(1000);
+      expect(account.getBalance()).toEqual(1000);
+    });
   });
 });
