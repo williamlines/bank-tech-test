@@ -119,5 +119,21 @@ describe("class ClientAccount", () => {
         balance: -400,
       }]);
     })
+    it("can make multiple withdrawals consecutively", () => {
+      account.withdraw(400, "01/02/2022");
+      account.withdraw(200, "02/02/2022");
+      expect(account.statement).toEqual([
+        {
+          date: "01/02/2022",
+          withdrawn: 400,
+          balance: -400,
+        },
+        {
+          date: "02/02/2022",
+          withdrawn: 200,
+          balance: -600,
+        },
+      ]);
+    })
   });
 });
