@@ -85,5 +85,23 @@ describe("class ClientAccount", () => {
         },
       ]);
     });
+
+    it("can make multiple deposits consecutively", () => {
+      account.deposit(300, "01/05/2022");
+      account.deposit(400, "02/05/2022");
+      expect(account.statement).toEqual([
+        {
+          date: "01/05/2022",
+          deposited: 300,
+          balance: 300,
+        },
+        {
+          date: "02/05/2022",
+          deposited: 400,
+          balance: 700,
+        },
+      ]);
+      expect(account.balance).toEqual(700);
+    });
   });
 });
