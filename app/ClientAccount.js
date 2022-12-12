@@ -16,6 +16,10 @@ class ClientAccount {
   removeFromBalance(value) {
     this.balance -= value;
   }
+
+  addToStatement(item) {
+    this.statement.push(item);
+  }
 }
 
 module.exports = ClientAccount;
