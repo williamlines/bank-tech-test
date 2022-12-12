@@ -5,7 +5,7 @@ describe("class ClientAccount", () => {
     account = new ClientAccount("Tester");
   });
 
-  it("has initially empty balance", () => {
+  it("constructs", () => {
     expect(account.balance).toEqual(0);
     expect(account.name).toEqual("Tester");
     expect(account.statement).toEqual([]);

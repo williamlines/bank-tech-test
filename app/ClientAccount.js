@@ -6,7 +6,7 @@ class ClientAccount {
   }
 
   getBalance() {
-    return this.balance
+    return this.balance;
   }
 }
 
