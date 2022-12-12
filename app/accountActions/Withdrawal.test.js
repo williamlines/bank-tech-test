@@ -16,4 +16,14 @@ describe("class: Withdrawal", () => {
       expect(withdrawal.newBalance()).toEqual(1800);
     });
   });
+
+  describe("function makeWithdrawal()", () => {
+    it("returns the desired object", () => {
+      expect(withdrawal.makeWithdrawal()).toEqual({
+        date: "01/03/2022",
+        withdrawn: 200,
+        balance: 1800,
+      });
+    });
+  });
 });

@@ -8,6 +8,15 @@ class Withdrawal {
   newBalance() {
     return this.balance - this.value;
   }
+
+  makeWithdrawal() {
+    const newBalance = this.newBalance();
+    return {
+      date: this.date,
+      withdrawn: this.value,
+      balance: newBalance,
+    };
+  }
 }
 
 module.exports = Withdrawal;
