@@ -68,4 +68,11 @@ describe("class ClientAccount", () => {
       ]);
     });
   });
+
+  describe("function deposit()", () => {
+    it("correctly updates the balance", () => {
+      account.deposit(300, "01/05/2022");
+      expect(account.balance).toEqual(300);
+    });
+  });
 });
