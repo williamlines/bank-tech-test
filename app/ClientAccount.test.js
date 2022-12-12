@@ -113,12 +113,14 @@ describe("class ClientAccount", () => {
 
     it("can push the correct object to the statement array", () => {
       account.withdraw(400, "01/02/2022");
-      expect(account.statement).toEqual([{
-        date: "01/02/2022",
-        withdrawn: 400,
-        balance: -400,
-      }]);
-    })
+      expect(account.statement).toEqual([
+        {
+          date: "01/02/2022",
+          withdrawn: 400,
+          balance: -400,
+        },
+      ]);
+    });
     it("can make multiple withdrawals consecutively", () => {
       account.withdraw(400, "01/02/2022");
       account.withdraw(200, "02/02/2022");
@@ -134,6 +136,44 @@ describe("class ClientAccount", () => {
           balance: -600,
         },
       ]);
-    })
+    });
+  });
+
+  describe("interaction between withdraw and deposit functions", () => {
+    it("can make a deposit then a withdrawal", () => {
+      account.deposit(1000, "01/01/2022");
+      account.withdraw(200, "02/01/2022");
+      expect(account.statement).toEqual([
+        {
+          date: "01/01/2022",
+          deposited: 1000,
+          balance: 1000,
+        },
+        {
+          date: "02/01/2022",
+          withdrawn: 200,
+          balance: 800,
+        },
+      ]);
+      expect(account.balance).toEqual(800);
+    });
+
+    it("can make a withdrawal, then a deposit", () => {
+      account.withdraw(200, "02/01/2022");
+      account.deposit(1000, "01/01/2022");
+      expect(account.statement).toEqual([
+        {
+          date: "02/01/2022",
+          withdrawn: 200,
+          balance: -200,
+        },
+        {
+          date: "01/01/2022",
+          deposited: 1000,
+          balance: 800,
+        },
+      ]);
+      expect(account.balance).toEqual(800);
+    });
   });
 });
