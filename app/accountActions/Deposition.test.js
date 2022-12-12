@@ -16,4 +16,14 @@ describe("class: Deposition", () => {
       expect(deposition.newBalance()).toEqual(2100);
     });
   });
+
+  describe("function makeDeposit()", () => {
+    it("can return the correct object", () => {
+      expect(deposition.makeDeposit()).toEqual({
+        date: "01/02/2022",
+        deposited: 100,
+        balance: 2100,
+      });
+    });
+  });
 });
