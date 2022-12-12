@@ -4,6 +4,9 @@ class Deposition {
     this.balance = balance;
     this.date = date;
   }
+  newBalance() {
+    return this.balance + this.value;
+  }
 }
 
-module.exports = Deposition
+module.exports = Deposition;
