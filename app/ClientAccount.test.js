@@ -25,5 +25,11 @@ describe("class ClientAccount", () => {
       account.removeFromBalance(2000);
       expect(account.getBalance()).toEqual(-2000);
     });
+
+    it("can addToBalance() and then removeFromBalance() and balance will be correct", () => {
+      account.addToBalance(5000);
+      account.removeFromBalance(3000);
+      expect(account.getBalance()).toEqual(2000);
+    })
   });
 });
