@@ -104,4 +104,11 @@ describe("class ClientAccount", () => {
       expect(account.balance).toEqual(700);
     });
   });
+
+  describe("withdraw() fucntion", () => {
+    it("correctly updates the balance", () => {
+      account.withdraw(400, "01/02/2022");
+      expect(account.balance).toEqual(-400);
+    });
+  });
 });

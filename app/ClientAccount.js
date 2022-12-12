@@ -29,6 +29,10 @@ class ClientAccount {
     this.addToBalance(value);
     this.addToStatement(newItemForStatement);
   }
+
+  withdraw(value, date) {
+    this.removeFromBalance(value);
+  }
 }
 
 module.exports = ClientAccount;
