@@ -30,6 +30,26 @@ describe("class ClientAccount", () => {
       account.addToBalance(5000);
       account.removeFromBalance(3000);
       expect(account.getBalance()).toEqual(2000);
+    });
+
+    it("can add zero to balance", () => {
+      account.addToBalance(0);
+      expect(account.getBalance()).toEqual(0);
+    });
+
+    it("can remove zero to balance", () => {
+      account.removeFromBalance(0);
+      expect(account.getBalance()).toEqual(0);
+    });
+
+    it("can add negative to balance", () => {
+      account.addToBalance(-5);
+      expect(account.getBalance()).toEqual(-5);
+    });
+
+    it("can remove negative from balance", () => {
+      account.removeFromBalance(-10);
+      expect(account.getBalance()).toEqual(10);
     })
   });
 });
