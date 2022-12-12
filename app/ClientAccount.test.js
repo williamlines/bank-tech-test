@@ -52,6 +52,7 @@ describe("class ClientAccount", () => {
       expect(account.getBalance()).toEqual(10);
     });
   });
+
   describe("function addToStatement", () => {
     it("can add to the statement array", () => {
       account.addToStatement("just a string");
@@ -61,7 +62,10 @@ describe("class ClientAccount", () => {
     it("can add multiple items to the statement array", () => {
       account.addToStatement("just a string");
       account.addToStatement("now another string");
-      expect(account.statement).toEqual(["just a string", "now another string"]);
+      expect(account.statement).toEqual([
+        "just a string",
+        "now another string",
+      ]);
     });
   });
 });
