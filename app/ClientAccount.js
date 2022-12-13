@@ -2,8 +2,7 @@ const Deposition = require("./accountActions/Deposition");
 const Withdrawal = require("./accountActions/Withdrawal");
 
 class ClientAccount {
-  constructor(name) {
-    this.name = name;
+  constructor() {
     this.balance = 0;
     this.statement = [];
   }
@@ -46,6 +45,7 @@ class ClientAccount {
         orderedStatement[i]
       )}`;
     }
+    console.log(returnString);
     return returnString;
   }
 

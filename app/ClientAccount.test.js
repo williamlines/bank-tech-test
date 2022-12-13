@@ -7,7 +7,6 @@ describe("class ClientAccount", () => {
 
   it("constructs", () => {
     expect(account.balance).toEqual(0);
-    expect(account.name).toEqual("Tester");
     expect(account.statement).toEqual([]);
   });
 
