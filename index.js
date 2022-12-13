@@ -1,4 +1,4 @@
-const ClientAccount = require("./ClientAccount");
+const ClientAccount = require("./app/ClientAccount");
 
 const account = new ClientAccount();
 
