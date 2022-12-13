@@ -40,7 +40,7 @@ class ClientAccount {
 
   getAccountStatement() {
     let returnString = "date || credit || debit || balance";
-    returnString += this.statement[0];
+    returnString += `\n${this.makeStatementObjectString(this.statement[0])}`;
     return returnString;
   }
 
