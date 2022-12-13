@@ -37,6 +37,12 @@ class ClientAccount {
     this.removeFromBalance(value);
     this.addToStatement(newItemForStatement);
   }
+
+  getAccountStatement() {
+    let returnString = "date || credit || debit || balance";
+    returnString += this.statement[0]
+    return returnString;
+  }
 }
 
 module.exports = ClientAccount;

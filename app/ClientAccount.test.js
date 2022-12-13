@@ -176,4 +176,13 @@ describe("class ClientAccount", () => {
       expect(account.balance).toEqual(800);
     });
   });
+
+  describe("function getAccountStatement()", () => {
+    it("returns a formatted account statement when one deposit is made", () => {
+      account.deposit(200, "01/01/2022");
+      expect(account.getAccountStatement())
+        .toEqual(`date || credit || debit || balance
+      01/01/2022 || 2.00 || || 2.00`);
+    });
+  });
 });
