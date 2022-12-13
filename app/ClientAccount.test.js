@@ -269,5 +269,14 @@ describe("class ClientAccount", () => {
 02/01/2022 ||  || 200.00 || 100.00
 01/01/2022 || 300.00 ||  || 300.00`);
     });
+
+    it("can make a deposit, then a withdrawal on the same date", () => {
+      account.deposit(40000, "04/05/2022");
+      account.withdraw(5000, "04/05/2022");
+      expect(account.getAccountStatement())
+        .toEqual(`date || credit || debit || balance
+04/05/2022 ||  || 50.00 || 350.00
+04/05/2022 || 400.00 ||  || 400.00`);
+    });
   });
 });
