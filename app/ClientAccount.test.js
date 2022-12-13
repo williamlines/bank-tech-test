@@ -193,8 +193,24 @@ describe("class ClientAccount", () => {
     });
 
     it("converts 200 from pence to pounds", () => {
-      expect(account.convertToPounds(200)).toStrictEqual(2.00.toFixed(2));
-    })
+      expect(account.convertToPounds(200)).toStrictEqual((2.0).toFixed(2));
+    });
+
+    it("converts 1000 from pence to pounds", () => {
+      expect(account.convertToPounds(1000)).toStrictEqual((10.0).toFixed(2));
+    });
+
+    it("converts 1234 from pence to pounds", () => {
+      expect(account.convertToPounds(1234)).toStrictEqual((12.34).toFixed(2));
+    });
+
+    it("converts 1 from pence to pounds", () => {
+      expect(account.convertToPounds(1)).toStrictEqual((0.01).toFixed(2));
+    });
+
+    it("converts 13 from pence to pounds", () => {
+      expect(account.convertToPounds(13)).toStrictEqual((0.13).toFixed(2));
+    });
   });
 
   describe("function makeStatementObjectString()", () => {
