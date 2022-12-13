@@ -45,12 +45,16 @@ class ClientAccount {
   }
 
   makeStatementObjectString(object) {
-    
     return `${object.date} || ${object.deposited} || ${object.withdrawn} || ${object.balance}`;
   }
 
-  convertToPounds() {
-    return ""
+  convertToPounds(value) {
+    if (value === null) {
+      return "";
+    } else {
+      let newValue = value / 100;
+      return newValue.toFixed(2)
+    }
   }
 }
 

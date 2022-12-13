@@ -191,6 +191,10 @@ describe("class ClientAccount", () => {
     it("returns an empty string when given null", () => {
       expect(account.convertToPounds(null)).toEqual("");
     });
+
+    it("converts 200 from pence to pounds", () => {
+      expect(account.convertToPounds(200)).toStrictEqual(2.00.toFixed(2));
+    })
   });
 
   describe("function makeStatementObjectString()", () => {
