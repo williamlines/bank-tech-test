@@ -2,11 +2,11 @@
 
 ### A Technical Test for Makers Academy
 
-## Prerequisites
+# Prerequisites
 
 - Install [node.js](https://nodejs.org/en/)
 
-## Setup
+# Setup
 
 - Clone this repository
 
@@ -21,19 +21,21 @@ cd bank-tech-test
 npm install
 ```
 
-## Using the Code
+- The only dependency for this code is 'jest', used for testing.
 
-To start the app, make sure you are in the main directory and run
+# Using the Code
+
+- To start the app, make sure you are in the main directory and run
 
 ```
 npm start
 ```
 
-This will open node with a predefined class object 'account' to play around with.
+- This will open node with a predefined class object 'account' to play around with.
 
-## Instructions for use
+# Instructions for use
 
-### Making a Deposit
+## Making a Deposit
 
 - To make a deposit, use (in node)
 
@@ -47,7 +49,7 @@ for example:
 account.deposit(1000, "01/01/2022")
 ```
 
-### Making a withdrawal
+## Making a withdrawal
 
 - To make a withdrawal, use (in node)
 
@@ -61,7 +63,7 @@ for example:
 account.withdraw(1000, "01/01/2022")
 ```
 
-### Account statement
+## Account statement
 
 - To view your current account statement use (in node)
 
@@ -76,7 +78,7 @@ date || credit || debit || balance
 
 - This will display your deposit and withdrawal history, as well as the change in balance over time.
 
-## Running Tests
+# Running Tests
 
 - To run all the tests at once, from the main directory run in your terminal
 
@@ -89,13 +91,21 @@ jest
 ```
 jest --coverage
 ```
-# Testing components
-- To run the tests for only the Action class, run 
+
+## Testing components
+
+- To run the tests for only the Action class, run
+
 ```
-jest app/accountActions/Action.test.js 
+jest app/accountActions/Action.test.js
 ```
 
--To run the tests for only the ClientAccount class, run
+- To run the tests for only the ClientAccount class, run
+
 ```
-jest app/ClientAccount.test.js 
+jest app/ClientAccount.test.js
 ```
+
+# Notes
+
+Including with this repository in the /docs file is bank.png, the drawio diagram used to plan the structure of the project. As the project evolved the class structure has shrunk to combine the classes 'Withdrawal' and 'Deposition' into one class, 'Action'.
