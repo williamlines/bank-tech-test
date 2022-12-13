@@ -177,8 +177,17 @@ describe("class ClientAccount", () => {
     });
   });
 
+  describe("function makeStatementObjectString()", () => {
+    xit("can format a deposit to the correct string form", () => {
+      account.deposit(200, "01/01/2022");
+      expect(account.makeStatementObjectString(account.statement[0])).toEqual(
+        "01/01/2022 || || 2.00 || 2.00"
+      );
+    });
+  });
+
   describe("function getAccountStatement()", () => {
-    it("returns a formatted account statement when one deposit is made", () => {
+    xit("returns a formatted account statement when one deposit is made", () => {
       account.deposit(200, "01/01/2022");
       expect(account.getAccountStatement())
         .toEqual(`date || credit || debit || balance
