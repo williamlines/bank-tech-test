@@ -48,6 +48,10 @@ class ClientAccount {
     
     return `${object.date} || ${object.deposited} || ${object.withdrawn} || ${object.balance}`;
   }
+
+  convertToPounds() {
+    return ""
+  }
 }
 
 module.exports = ClientAccount;

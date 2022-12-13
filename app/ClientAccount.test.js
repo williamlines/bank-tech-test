@@ -187,6 +187,12 @@ describe("class ClientAccount", () => {
     });
   });
 
+  describe("function convertToPounds()", () => {
+    it("returns an empty string when given null", () => {
+      expect(account.convertToPounds(null)).toEqual("");
+    });
+  });
+
   describe("function makeStatementObjectString()", () => {
     xit("can format a deposit to the correct string form", () => {
       account.deposit(200, "01/01/2022");
