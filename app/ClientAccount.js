@@ -1,5 +1,4 @@
-const Deposition = require("./accountActions/Deposition");
-const Withdrawal = require("./accountActions/Withdrawal");
+const Action = require("./accountActions/Action");
 
 class ClientAccount {
   constructor() {
@@ -24,15 +23,15 @@ class ClientAccount {
   }
 
   deposit(value, date) {
-    const deposition = new Deposition(value, this.balance, date);
-    const newItemForStatement = deposition.makeDeposit();
+    const deposition = new Action(value, this.balance, date, "deposit");
+    const newItemForStatement = deposition.makeAction();
     this.addToBalance(value);
     this.addToStatement(newItemForStatement);
   }
 
   withdraw(value, date) {
-    const withdrawal = new Withdrawal(value, this.balance, date);
-    const newItemForStatement = withdrawal.makeWithdrawal();
+    const withdrawal = new Action(value, this.balance, date, "withdrawal");
+    const newItemForStatement = withdrawal.makeAction();
     this.removeFromBalance(value);
     this.addToStatement(newItemForStatement);
   }
