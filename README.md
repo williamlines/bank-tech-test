@@ -8,13 +8,13 @@
 
 # Setup
 
-- Clone this repository
+- Clone this repository.
 
 ```
 git clone https://github.com/williamlines/bank-tech-test.git
 ```
 
-- Install the dependencies
+- Install the dependencies.
 
 ```
 cd bank-tech-test
@@ -25,7 +25,7 @@ npm install
 
 # Using the Code
 
-- To start the app, make sure you are in root directory and run
+- To start the app, make sure you are in the root directory and run:
 
 ```
 npm start
@@ -37,7 +37,7 @@ npm start
 
 ## Making a Deposit
 
-- To make a deposit, use (in node)
+- To make a deposit, use (in node):
 
 ```
 account.deposit(<amount to deposit in pence>, <date as string>)
@@ -51,7 +51,7 @@ account.deposit(1000, "01/01/2022")
 
 ## Making a withdrawal
 
-- To make a withdrawal, use (in node)
+- To make a withdrawal, use (in node):
 
 ```
 account.withdraw(<amount to withdraw in pence>, <date as string>)
@@ -73,7 +73,7 @@ account.withdraw(1000, "01/01/2022")
 
 ## Account statement
 
-- To view your current account statement use (in node)
+- To view your current account statement use (in node):
 
 ```
 account.getAccountStatement()
@@ -88,7 +88,7 @@ date || credit || debit || balance
 
 # Running Tests
 
-- To run all the tests at once, make sure you have exited node with ctrl + c and in the root directory run:
+- To run all the tests at once, make sure you have exited node with ctrl + c, and in the root directory run:
 
 ```
 jest
@@ -102,13 +102,13 @@ jest --coverage
 
 ## Testing components
 
-- To run the tests for only the Action class, run
+- To run the tests for only the Action class, run:
 
 ```
 jest app/accountActions/Action.test.js
 ```
 
-- To run the tests for only the ClientAccount class, run
+- To run the tests for only the ClientAccount class, run:
 
 ```
 jest app/ClientAccount.test.js
@@ -116,5 +116,5 @@ jest app/ClientAccount.test.js
 
 # Notes
 
-Including with this repository in the /docs file is bank.png, the drawio diagram used to plan the structure of the project. As the project evolved the class structure has shrunk to combine the classes 'Withdrawal' and 'Deposition' into one class, 'Action'.
+Included with this repository in the /docs file is bank.png, the drawio diagram used to plan the structure of the project. As the project evolved the class structure has shrunk to combine the classes 'Withdrawal' and 'Deposition' into one class, 'Action'.
 ![](docs/bank.png)
