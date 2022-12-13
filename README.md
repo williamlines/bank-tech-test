@@ -114,6 +114,11 @@ jest app/accountActions/Action.test.js
 jest app/ClientAccount.test.js
 ```
 
+- To run only the tests for index.js, run:
+```
+jest index.test.js
+```
+
 # Notes
 
 Included with this repository in the /docs file is bank.png, the drawio diagram used to plan the structure of the project. As the project evolved the class structure has shrunk to combine the classes 'Withdrawal' and 'Deposition' into one class, 'Action'.
