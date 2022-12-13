@@ -251,5 +251,23 @@ describe("class ClientAccount", () => {
 02/01/2022 || 3.00 ||  || 5.00
 01/01/2022 || 2.00 ||  || 2.00`);
     });
+
+    it("can format when there has been multiple withdrawals", () => {
+      account.withdraw(200, "01/01/2022");
+      account.withdraw(300, "02/01/2022");
+      expect(account.getAccountStatement())
+        .toEqual(`date || credit || debit || balance
+02/01/2022 ||  || 3.00 || -5.00
+01/01/2022 ||  || 2.00 || -2.00`);
+    });
+
+    it("can format when there has been a deposit and a withdrawal.", () => {
+      account.deposit(30000, "01/01/2022");
+      account.withdraw(20000, "02/01/2022");
+      expect(account.getAccountStatement())
+        .toEqual(`date || credit || debit || balance
+02/01/2022 ||  || 200.00 || 100.00
+01/01/2022 || 300.00 ||  || 300.00`);
+    });
   });
 });
