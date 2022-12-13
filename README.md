@@ -25,13 +25,13 @@ npm install
 
 # Using the Code
 
-- To start the app, make sure you are in the main directory and run
+- To start the app, make sure you are in root directory and run
 
 ```
 npm start
 ```
 
-- This will open node with a predefined class object 'account' to play around with.
+- This will open node with a predefined class object 'account' to play around with using the instructions below.
 
 # Instructions for use
 
@@ -63,6 +63,14 @@ for example:
 account.withdraw(1000, "01/01/2022")
 ```
 
+### Note for Deposit and Withdrawal Functions
+
+- These functions assume that you are inputting the value of money as an integer, in pence, e.g. 1000 will produce 10.00 on the statement.
+
+- They also assume you input the date as a string in the format "DD/MM/YYYY", e.g. "01/02/2022" is equivalent to 1st February 2022.
+
+- Finally, they also assume that you make deposits in chronological order. No tolerance for time travel.
+
 ## Account statement
 
 - To view your current account statement use (in node)
@@ -80,7 +88,7 @@ date || credit || debit || balance
 
 # Running Tests
 
-- To run all the tests at once, from the main directory run in your terminal
+- To run all the tests at once, make sure you have exited node with ctrl + c and in the root directory run:
 
 ```
 jest
@@ -109,3 +117,4 @@ jest app/ClientAccount.test.js
 # Notes
 
 Including with this repository in the /docs file is bank.png, the drawio diagram used to plan the structure of the project. As the project evolved the class structure has shrunk to combine the classes 'Withdrawal' and 'Deposition' into one class, 'Action'.
+![](docs/bank.png)
