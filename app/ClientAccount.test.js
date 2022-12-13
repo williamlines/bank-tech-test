@@ -214,10 +214,10 @@ describe("class ClientAccount", () => {
   });
 
   describe("function makeStatementObjectString()", () => {
-    xit("can format a deposit to the correct string form", () => {
+    it("can format a deposit to the correct string form", () => {
       account.deposit(200, "01/01/2022");
       expect(account.makeStatementObjectString(account.statement[0])).toEqual(
-        "01/01/2022 || || 2.00 || 2.00"
+        "01/01/2022 || 2.00 ||  || 2.00"
       );
     });
   });

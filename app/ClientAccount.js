@@ -45,7 +45,10 @@ class ClientAccount {
   }
 
   makeStatementObjectString(object) {
-    return `${object.date} || ${object.deposited} || ${object.withdrawn} || ${object.balance}`;
+    const credit = this.convertToPounds(object.deposited)
+    const debit = this.convertToPounds(object.withdrawn)
+    const balance = this.convertToPounds(object.balance)
+    return `${object.date} || ${credit} || ${debit} || ${balance}`;
   }
 
   convertToPounds(value) {
