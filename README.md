@@ -84,8 +84,18 @@ date || credit || debit || balance
 jest
 ```
 
-- To see coverage you may also run
+- To see coverage you may also append --coverage
 
 ```
 jest --coverage
+```
+# Testing components
+- To run the tests for only the Action class, run 
+```
+jest app/accountActions/Action.test.js 
+```
+
+-To run the tests for only the ClientAccount class, run
+```
+jest app/ClientAccount.test.js 
 ```
