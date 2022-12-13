@@ -220,6 +220,12 @@ describe("class ClientAccount", () => {
         "01/01/2022 || 2.00 ||  || 2.00"
       );
     });
+    it("can format a withdrawal to the correct string form", () => {
+      account.withdraw(200, "01/01/2022");
+      expect(account.makeStatementObjectString(account.statement[0])).toEqual(
+        "01/01/2022 ||  || 2.00 || -2.00"
+      );
+    });
   });
 
   describe("function getAccountStatement()", () => {
