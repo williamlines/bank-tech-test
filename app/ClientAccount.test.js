@@ -81,6 +81,7 @@ describe("class ClientAccount", () => {
         {
           date: "01/05/2022",
           deposited: 300,
+          withdrawn: null,
           balance: 300,
         },
       ]);
@@ -93,11 +94,13 @@ describe("class ClientAccount", () => {
         {
           date: "01/05/2022",
           deposited: 300,
+          withdrawn: null,
           balance: 300,
         },
         {
           date: "02/05/2022",
           deposited: 400,
+          withdrawn: null,
           balance: 700,
         },
       ]);
@@ -116,6 +119,7 @@ describe("class ClientAccount", () => {
       expect(account.statement).toEqual([
         {
           date: "01/02/2022",
+          deposited: null,
           withdrawn: 400,
           balance: -400,
         },
@@ -127,11 +131,13 @@ describe("class ClientAccount", () => {
       expect(account.statement).toEqual([
         {
           date: "01/02/2022",
+          deposited: null,
           withdrawn: 400,
           balance: -400,
         },
         {
           date: "02/02/2022",
+          deposited: null,
           withdrawn: 200,
           balance: -600,
         },
@@ -147,10 +153,12 @@ describe("class ClientAccount", () => {
         {
           date: "01/01/2022",
           deposited: 1000,
+          withdrawn: null,
           balance: 1000,
         },
         {
           date: "02/01/2022",
+          deposited: null,
           withdrawn: 200,
           balance: 800,
         },
@@ -164,12 +172,14 @@ describe("class ClientAccount", () => {
       expect(account.statement).toEqual([
         {
           date: "02/01/2022",
+          deposited: null,
           withdrawn: 200,
           balance: -200,
         },
         {
           date: "01/01/2022",
           deposited: 1000,
+          withdrawn: null,
           balance: 800,
         },
       ]);

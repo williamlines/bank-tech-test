@@ -22,6 +22,7 @@ describe("class: Deposition", () => {
       expect(deposition.makeDeposit()).toEqual({
         date: "01/02/2022",
         deposited: 100,
+        withdrawn: null,
         balance: 2100,
       });
     });

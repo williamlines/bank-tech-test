@@ -14,6 +14,7 @@ class Deposition {
     return {
       date: this.date,
       deposited: this.value,
+      withdrawn: null,
       balance: newBalance,
     };
   }

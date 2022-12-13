@@ -13,6 +13,7 @@ class Withdrawal {
     const newBalance = this.newBalance();
     return {
       date: this.date,
+      deposited: null,
       withdrawn: this.value,
       balance: newBalance,
     };

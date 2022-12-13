@@ -21,6 +21,7 @@ describe("class: Withdrawal", () => {
     it("returns the desired object", () => {
       expect(withdrawal.makeWithdrawal()).toEqual({
         date: "01/03/2022",
+        deposited: null,
         withdrawn: 200,
         balance: 1800,
       });
