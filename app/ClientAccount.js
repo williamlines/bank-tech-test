@@ -40,14 +40,19 @@ class ClientAccount {
 
   getAccountStatement() {
     let returnString = "date || credit || debit || balance";
-    returnString += `\n${this.makeStatementObjectString(this.statement[0])}`;
+    const orderedStatement = this.statement.slice().reverse();
+    for (let i = 0; i < orderedStatement.length; i++) {
+      returnString += `\n${this.makeStatementObjectString(
+        orderedStatement[i]
+      )}`;
+    }
     return returnString;
   }
 
   makeStatementObjectString(object) {
-    const credit = this.convertToPounds(object.deposited)
-    const debit = this.convertToPounds(object.withdrawn)
-    const balance = this.convertToPounds(object.balance)
+    const credit = this.convertToPounds(object.deposited);
+    const debit = this.convertToPounds(object.withdrawn);
+    const balance = this.convertToPounds(object.balance);
     return `${object.date} || ${credit} || ${debit} || ${balance}`;
   }
 
@@ -56,7 +61,7 @@ class ClientAccount {
       return "";
     } else {
       let newValue = value / 100;
-      return newValue.toFixed(2)
+      return newValue.toFixed(2);
     }
   }
 }
