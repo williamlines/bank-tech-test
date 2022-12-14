@@ -20,5 +20,8 @@
   "homepage": "https://github.com/williamlines/bank-tech-test#readme",
   "dependencies": {
     "jest": "^29.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.29.0"
   }
 }
