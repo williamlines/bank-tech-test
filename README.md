@@ -115,13 +115,19 @@ jest app/ClientAccount.test.js
 ```
 
 - To run only the tests for index.js, run:
+
 ```
 jest index.test.js
 ```
 
-# Notes
+# Design Process
 
-Included with this repository in the /docs file is bank.png, the drawio diagram used to plan the structure of the project. As the project evolved the class structure has shrunk to combine the classes 'Withdrawal' and 'Deposition' into one class, 'Action'.
+Initially I wanted to divide the responsibilty of the app into three classes. One class 'Deposition' for making a deposit, one class 'Withdrawal' for making a withdrawal, and one class 'ClientAccount' for logging said deposits and withdrawals. This would mean no class had too much responsibility for the operation of the code.
+
+I test drove these classes, and the code worked and passed the tests, but I noticed that the classes 'Deposition' and 'Withdrawal' were doing almost the same thing. It was at this point I decided to refactor, and combine those two classes into 'Action', the class that eliminates the need to repeat code in "Deposition' and 'Withdrawal'.
+
+The code is now at a point where I am happy with its structure and functionality, it satisfies the requirements and nothing more. Below is the diagram of the initial class structure I devised, although the code has evolved past this design over its development.
 
 ### /docs/bank.png
+
 ![](docs/bank.png)
